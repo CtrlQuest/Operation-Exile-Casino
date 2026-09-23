@@ -1,0 +1,228 @@
+FrameWidgetClass rootFrame {
+ visible 1
+ position 0 0
+ size 1248 1000
+ halign center_ref
+ valign center_ref
+ hexactpos 1
+ vexactpos 1
+ hexactsize 1
+ vexactsize 1
+ {
+  PanelWidgetClass background {
+   visible 1
+   ignorepointer 1
+   color 0.02 0.02 0.02 0.96
+   position 13 13
+   size 1222 974
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style DayZDefaultPanel
+   {
+    PanelWidgetClass headerPanel {
+     visible 1 ignorepointer 1 color 0.04 0.04 0.04 0.98 position 20 15 size 1182 72
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection
+     {
+      TextWidgetClass title {
+       visible 1 ignorepointer 1 position 250 7 size 682 30
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "TEXAS HOLD'EM"
+       "text halign" center "text valign" center
+      }
+      TextWidgetClass subTitle {
+       visible 1 ignorepointer 1 position 220 39 size 742 23
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Player vs Dealer - Build the best five-card hand."
+       "text halign" center "text valign" center
+      }
+      ButtonWidgetClass closeButton {
+       visible 1 color 0.28 0.04 0.04 1 position 1126 12 size 42 42
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "X"
+      }
+     }
+    }
+
+    PanelWidgetClass statsPanel {
+     visible 1 ignorepointer 1 color 0.035 0.035 0.035 0.98 position 20 95 size 1182 58
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection
+     {
+      TextWidgetClass balanceLabel { visible 1 ignorepointer 1 position 24 15 size 85 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "BALANCE" }
+      TextWidgetClass balanceValue { visible 1 ignorepointer 1 position 110 15 size 150 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+
+      TextWidgetClass potLabel { visible 1 ignorepointer 1 position 278 15 size 48 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "POT" }
+      TextWidgetClass potValue { visible 1 ignorepointer 1 position 328 15 size 105 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+
+      TextWidgetClass playerTotalLabel { visible 1 ignorepointer 1 position 450 15 size 100 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "YOU IN" }
+      TextWidgetClass playerTotalValue { visible 1 ignorepointer 1 position 545 15 size 100 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+
+      TextWidgetClass dealerTotalLabel { visible 1 ignorepointer 1 position 660 15 size 110 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "DEALER IN" }
+      TextWidgetClass dealerTotalValue { visible 1 ignorepointer 1 position 765 15 size 100 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+
+      TextWidgetClass resultLabel { visible 1 ignorepointer 1 position 875 15 size 72 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "RESULT" }
+      TextWidgetClass resultValue { visible 1 ignorepointer 1 position 950 15 size 205 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" right }
+     }
+    }
+
+    PanelWidgetClass pokerTablePanel {
+     visible 1 ignorepointer 1 color 0.025 0.025 0.025 0.94 position 20 163 size 1182 600
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection
+     {
+      TextWidgetClass statusPrompt {
+       visible 1 ignorepointer 1 position 105 8 size 972 31
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "CHOOSE A BET TO DEAL"
+       "text halign" center "text valign" center
+      }
+      TextWidgetClass streetValue {
+       visible 1 ignorepointer 1 color 0.75 0.75 0.75 1 position 1015 8 size 130 28
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-"
+       "text halign" right "text valign" center
+      }
+
+      TextWidgetClass dealerActionTitle {
+       visible 1 ignorepointer 1 position 35 68 size 285 24
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DEALER ACTION"
+       "text halign" center "text valign" center
+      }
+      TextWidgetClass dealerActionValue {
+       visible 1 ignorepointer 1 color 0.80 0.80 0.80 1 position 35 100 size 285 30
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "WAITING FOR HAND"
+       "text halign" center "text valign" center
+      }
+
+      TextWidgetClass dealerLabel {
+       visible 1 ignorepointer 1 position 456 48 size 270 25
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DEALER"
+       "text halign" center "text valign" center
+      }
+      ImageWidgetClass dealerCard1 {
+       visible 1 ignorepointer 1 position 482 78 size 90 126
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1
+      }
+      ImageWidgetClass dealerCard2 {
+       visible 1 ignorepointer 1 position 592 78 size 90 126
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1
+      }
+      PanelWidgetClass dealerFlipBar1 { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 523 78 size 8 126 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      PanelWidgetClass dealerFlipBar2 { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 633 78 size 8 126 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      TextWidgetClass dealerHandLabel {
+       visible 1 ignorepointer 1 position 850 95 size 295 30
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DEALER HAND: HIDDEN"
+       "text halign" center "text valign" center
+      }
+
+      TextWidgetClass communityLabel {
+       visible 1 ignorepointer 1 position 416 218 size 350 24
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "COMMUNITY CARDS"
+       "text halign" center "text valign" center
+      }
+      ImageWidgetClass communityCard1 { visible 1 ignorepointer 1 position 291 250 size 100 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1 }
+      ImageWidgetClass communityCard2 { visible 1 ignorepointer 1 position 411 250 size 100 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1 }
+      ImageWidgetClass communityCard3 { visible 1 ignorepointer 1 position 531 250 size 100 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1 }
+      ImageWidgetClass communityCard4 { visible 1 ignorepointer 1 position 651 250 size 100 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1 }
+      ImageWidgetClass communityCard5 { visible 1 ignorepointer 1 position 771 250 size 100 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1 }
+      PanelWidgetClass communityFlipBar1 { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 337 250 size 8 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      PanelWidgetClass communityFlipBar2 { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 457 250 size 8 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      PanelWidgetClass communityFlipBar3 { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 577 250 size 8 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      PanelWidgetClass communityFlipBar4 { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 697 250 size 8 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      PanelWidgetClass communityFlipBar5 { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 817 250 size 8 140 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+
+      TextWidgetClass playerLabel {
+       visible 1 ignorepointer 1 position 456 398 size 270 24
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "YOU"
+       "text halign" center "text valign" center
+      }
+      ImageWidgetClass playerCard1 {
+       visible 1 ignorepointer 1 position 482 428 size 90 126
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1
+      }
+      ImageWidgetClass playerCard2 {
+       visible 1 ignorepointer 1 position 592 428 size 90 126
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1
+      }
+      PanelWidgetClass playerFlipBar1 { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 523 428 size 8 126 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      PanelWidgetClass playerFlipBar2 { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 633 428 size 8 126 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      TextWidgetClass playerHandLabel {
+       visible 1 ignorepointer 1 position 850 424 size 295 28
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "YOUR HAND: -"
+       "text halign" center "text valign" center
+      }
+      TextWidgetClass messageText {
+       visible 1 ignorepointer 1 color 0.80 0.80 0.80 1 position 105 568 size 972 24
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Choose an opening bet."
+       "text halign" center "text valign" center
+      }
+     }
+    }
+
+    PanelWidgetClass startPanel {
+     visible 1 color 0.045 0.045 0.045 0.98 position 20 773 size 1182 181
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection
+     {
+      TextWidgetClass wagerLabel {
+       visible 1 ignorepointer 1 position 55 17 size 100 50
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "BET"
+       "text halign" center "text valign" center
+      }
+      ButtonWidgetClass betMinus100 { visible 1 color 0.12 0.12 0.12 1 position 175 17 size 130 52 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-100" }
+      ButtonWidgetClass betMinus10 { visible 1 color 0.12 0.12 0.12 1 position 325 17 size 130 52 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-10" }
+      TextWidgetClass selectedBetValue { visible 1 ignorepointer 1 position 475 17 size 190 52 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center "text valign" center }
+      ButtonWidgetClass betPlus10 { visible 1 color 0.12 0.12 0.12 1 position 685 17 size 130 52 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+10" }
+      ButtonWidgetClass betPlus100 { visible 1 color 0.12 0.12 0.12 1 position 835 17 size 130 52 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+100" }
+      ButtonWidgetClass dealButton {
+       visible 1 color 0.05 0.30 0.10 1 position 381 91 size 420 54
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "DEAL HAND"
+      }
+      TextWidgetClass startInfo {
+       visible 1 ignorepointer 1 position 140 153 size 902 24
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Dealer matches your opening bet. Choose your own raise size during the hand."
+       "text halign" center "text valign" center
+      }
+     }
+    }
+
+    PanelWidgetClass actionPanel {
+     visible 0 color 0.045 0.045 0.045 0.98 position 20 773 size 1182 181
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection
+     {
+      TextWidgetClass decisionPrompt {
+       visible 1 ignorepointer 1 position 55 5 size 1072 26
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "YOUR ACTION"
+       "text halign" center "text valign" center
+      }
+      ButtonWidgetClass foldButton {
+       visible 1 color 0.30 0.06 0.06 1 position 55 36 size 300 48
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "FOLD"
+      }
+      ButtonWidgetClass primaryButton {
+       visible 1 color 0.05 0.25 0.10 1 position 441 36 size 300 48
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "CHECK"
+      }
+      ButtonWidgetClass raiseButton {
+       visible 1 color 0.30 0.12 0.04 1 position 827 36 size 300 48
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "BET 100"
+      }
+
+      TextWidgetClass raiseLabel {
+       visible 1 ignorepointer 1 position 55 96 size 95 38
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "RAISE"
+       "text halign" center "text valign" center
+      }
+      ButtonWidgetClass raiseMinus1000 { visible 1 color 0.12 0.12 0.12 1 position 160 96 size 110 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-1000" }
+      ButtonWidgetClass raiseMinus100 { visible 1 color 0.12 0.12 0.12 1 position 280 96 size 105 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-100" }
+      ButtonWidgetClass raiseMinus10 { visible 1 color 0.12 0.12 0.12 1 position 395 96 size 85 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-10" }
+      TextWidgetClass selectedRaiseValue { visible 1 ignorepointer 1 position 490 96 size 180 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center "text valign" center }
+      ButtonWidgetClass raisePlus10 { visible 1 color 0.12 0.12 0.12 1 position 680 96 size 85 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+10" }
+      ButtonWidgetClass raisePlus100 { visible 1 color 0.12 0.12 0.12 1 position 775 96 size 105 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+100" }
+      ButtonWidgetClass raisePlus1000 { visible 1 color 0.12 0.12 0.12 1 position 890 96 size 110 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+1000" }
+
+      TextWidgetClass actionInfo {
+       visible 1 ignorepointer 1 color 0.78 0.78 0.78 1 position 90 145 size 1002 24
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Raise 10-300 | Raises 0/2"
+       "text halign" center "text valign" center
+      }
+     }
+    }
+   }
+  }
+ }
+}

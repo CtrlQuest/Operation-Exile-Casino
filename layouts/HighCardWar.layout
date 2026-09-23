@@ -1,0 +1,90 @@
+FrameWidgetClass rootFrame {
+ visible 1 position 0 0 size 1248 920 halign center_ref valign center_ref
+ hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+  PanelWidgetClass background {
+   visible 1 ignorepointer 1 color 0.02 0.02 0.02 0.96 position 13 13 size 1222 894
+   hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style DayZDefaultPanel {
+    PanelWidgetClass headerPanel {
+     visible 1 ignorepointer 1 color 0.04 0.04 0.04 0.98 position 20 15 size 1182 72
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass title { visible 1 ignorepointer 1 position 250 7 size 682 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "HIGH CARD / WAR" "text halign" center "text valign" center }
+      TextWidgetClass subTitle { visible 1 ignorepointer 1 position 220 39 size 742 25 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Highest card wins. Ties can surrender or GO TO WAR." "text halign" center "text valign" center }
+      ButtonWidgetClass closeButton { visible 1 color 0.28 0.04 0.04 1 position 1126 12 size 42 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "X" }
+     }
+    }
+
+    PanelWidgetClass statsPanel {
+     visible 1 ignorepointer 1 color 0.035 0.035 0.035 0.98 position 20 95 size 1182 58
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass balanceLabel { visible 1 ignorepointer 1 position 35 13 size 100 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "BALANCE" }
+      TextWidgetClass balanceValue { visible 1 ignorepointer 1 position 135 13 size 185 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass stakeLabel { visible 1 ignorepointer 1 position 350 13 size 85 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "STAKE" }
+      TextWidgetClass stakeValue { visible 1 ignorepointer 1 position 435 13 size 145 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass resultLabel { visible 1 ignorepointer 1 position 610 13 size 95 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "RESULT" }
+      TextWidgetClass resultValue { visible 1 ignorepointer 1 position 705 13 size 230 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" }
+      TextWidgetClass rulesText { visible 1 ignorepointer 1 position 930 13 size 205 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "ACE HIGH | WIN 1:1" "text halign" right }
+     }
+    }
+
+    PanelWidgetClass tablePanel {
+     visible 1 ignorepointer 1 color 0.025 0.025 0.025 0.94 position 20 163 size 1182 500
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass dealerRoundLabel { visible 1 ignorepointer 1 position 90 18 size 430 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DEALER" "text halign" center }
+      TextWidgetClass playerRoundLabel { visible 1 ignorepointer 1 position 662 18 size 430 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "YOU" "text halign" center }
+
+      ImageWidgetClass dealerCard { visible 0 ignorepointer 1 position 195 78 size 170 247 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1 }
+      ImageWidgetClass playerCard { visible 0 ignorepointer 1 position 817 78 size 170 247 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1 }
+
+      PanelWidgetClass dealerFlipBar { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 273 78 size 14 247 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      PanelWidgetClass playerFlipBar { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 895 78 size 14 247 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+
+      TextWidgetClass versusText { visible 1 ignorepointer 1 position 526 128 size 130 80 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "VS" "text halign" center "text valign" center }
+
+      PanelWidgetClass warCardLabels {
+       visible 0 ignorepointer 1 color 0 0 0 0 position 0 0 size 1182 500 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+        TextWidgetClass dealerWarLabel { visible 1 ignorepointer 1 position 355 350 size 150 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "WAR CARD" "text halign" center }
+        TextWidgetClass playerWarLabel { visible 1 ignorepointer 1 position 677 350 size 150 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "WAR CARD" "text halign" center }
+       }
+      }
+
+      ImageWidgetClass dealerWarCard { visible 0 ignorepointer 1 position 365 220 size 120 174 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1 }
+      ImageWidgetClass playerWarCard { visible 0 ignorepointer 1 position 697 220 size 120 174 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 stretch 1 }
+
+      PanelWidgetClass dealerWarFlipBar { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 420 220 size 10 174 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+      PanelWidgetClass playerWarFlipBar { visible 0 ignorepointer 1 color 0.62 0.10 0.10 1 position 752 220 size 10 174 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+
+      TextWidgetClass ruleLine1 { visible 1 ignorepointer 1 position 145 420 size 892 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "TIE: SURRENDER = lose half | GO TO WAR = match the original wager" "text halign" center }
+      TextWidgetClass ruleLine2 { visible 1 ignorepointer 1 position 145 450 size 892 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "WAR: original wager pushes, matched wager wins 1:1 | second WAR tie wins" "text halign" center }
+     }
+    }
+
+    TextWidgetClass messageText {
+     visible 1 ignorepointer 1 position 65 670 size 1092 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1
+     style Bold text "Loading High Card / War..." "text halign" center "text valign" center wrap 1
+    }
+
+    PanelWidgetClass startPanel {
+     visible 1 color 0.045 0.045 0.045 0.98 position 20 720 size 1182 144
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass wagerLabel { visible 1 ignorepointer 1 position 42 26 size 115 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "WAGER" "text valign" center }
+      ButtonWidgetClass betMinus100 { visible 1 color 0.12 0.12 0.12 1 position 170 26 size 110 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-100" }
+      ButtonWidgetClass betMinus10 { visible 1 color 0.12 0.12 0.12 1 position 292 26 size 95 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-10" }
+      TextWidgetClass selectedBetValue { visible 1 ignorepointer 1 position 400 26 size 150 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center "text valign" center }
+      ButtonWidgetClass betPlus10 { visible 1 color 0.12 0.12 0.12 1 position 562 26 size 95 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+10" }
+      ButtonWidgetClass betPlus100 { visible 1 color 0.12 0.12 0.12 1 position 669 26 size 110 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+100" }
+      ButtonWidgetClass dealButton { visible 1 color 0.05 0.30 0.10 1 position 795 26 size 345 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "PLACE BET & DEAL" }
+     }
+    }
+
+    PanelWidgetClass actionPanel {
+     visible 0 color 0.045 0.045 0.045 0.98 position 20 720 size 1182 144
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass tiePrompt { visible 1 ignorepointer 1 position 55 12 size 1072 32 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "TIE - choose what to do next" "text halign" center "text valign" center }
+      ButtonWidgetClass surrenderButton { visible 1 color 0.34 0.12 0.08 1 position 175 54 size 360 62 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "SURRENDER HALF" }
+      ButtonWidgetClass goToWarButton { visible 1 color 0.38 0.22 0.05 1 position 647 54 size 360 62 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "GO TO WAR" }
+     }
+    }
+   }
+  }
+ }
+}

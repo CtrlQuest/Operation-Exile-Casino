@@ -1,0 +1,109 @@
+FrameWidgetClass rootFrame {
+ visible 1 position 0 0 size 1248 920 halign center_ref valign center_ref
+ hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+  PanelWidgetClass background {
+   visible 1 ignorepointer 1 color 0.02 0.02 0.02 0.96 position 13 13 size 1222 894
+   hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style DayZDefaultPanel {
+
+    PanelWidgetClass headerPanel {
+     visible 1 ignorepointer 1 color 0.04 0.04 0.04 0.98 position 20 15 size 1182 72
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass title { visible 1 ignorepointer 1 position 250 7 size 682 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DICE BETTING" "text halign" center "text valign" center }
+      TextWidgetClass subTitle { visible 1 ignorepointer 1 position 250 39 size 682 25 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Choose your bet and roll two dice." "text halign" center "text valign" center }
+      ButtonWidgetClass closeButton { visible 1 color 0.28 0.04 0.04 1 position 1126 12 size 42 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "X" }
+     }
+    }
+
+    PanelWidgetClass statsPanel {
+     visible 1 ignorepointer 1 color 0.035 0.035 0.035 0.98 position 20 95 size 1182 58
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass balanceLabel { visible 1 ignorepointer 1 position 35 13 size 100 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "BALANCE" }
+      TextWidgetClass balanceValue { visible 1 ignorepointer 1 position 135 13 size 175 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass betLabel { visible 1 ignorepointer 1 position 315 13 size 80 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "STAKE" }
+      TextWidgetClass betValue { visible 1 ignorepointer 1 position 395 13 size 120 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass resultLabel { visible 1 ignorepointer 1 position 535 13 size 100 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "RESULT" }
+      TextWidgetClass resultValue { visible 1 ignorepointer 1 position 635 13 size 190 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" }
+      TextWidgetClass rollSummaryLabel { visible 1 ignorepointer 1 position 825 13 size 150 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "SERVER ROLLED" "text halign" right }
+      TextWidgetClass rollSummaryValue { visible 1 ignorepointer 1 position 985 13 size 150 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" right }
+     }
+    }
+
+    PanelWidgetClass dicePanel {
+     visible 1 ignorepointer 1 color 0.025 0.025 0.025 0.96 position 20 163 size 1182 340
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass rollTitle { visible 1 ignorepointer 1 position 40 15 size 1102 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "ROLL RESULT" "text halign" center "text valign" center }
+
+      PanelWidgetClass die1Box {
+       visible 1 ignorepointer 1 color 0.055 0.055 0.055 0.98 position 125 68 size 270 175
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+        TextWidgetClass die1Label { visible 1 ignorepointer 1 position 10 12 size 250 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DIE 1" "text halign" center "text valign" center }
+        TextWidgetClass die1Value { visible 1 ignorepointer 1 position 10 48 size 250 100 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" center "text valign" center }
+       }
+      }
+
+      PanelWidgetClass totalBox {
+       visible 1 ignorepointer 1 color 0.07 0.07 0.07 0.98 position 456 68 size 270 175
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+        TextWidgetClass totalLabel { visible 1 ignorepointer 1 position 10 12 size 250 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "TOTAL" "text halign" center "text valign" center }
+        TextWidgetClass totalValue { visible 1 ignorepointer 1 position 10 48 size 250 100 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" center "text valign" center }
+       }
+      }
+
+      PanelWidgetClass die2Box {
+       visible 1 ignorepointer 1 color 0.055 0.055 0.055 0.98 position 787 68 size 270 175
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+        TextWidgetClass die2Label { visible 1 ignorepointer 1 position 10 12 size 250 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DIE 2" "text halign" center "text valign" center }
+        TextWidgetClass die2Value { visible 1 ignorepointer 1 position 10 48 size 250 100 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" center "text valign" center }
+       }
+      }
+
+      // Keep the widget for script compatibility, but do not render status text
+      // over the betting controls.
+      TextWidgetClass messageText { visible 0 ignorepointer 1 position 0 0 size 1 1 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" }
+     }
+    }
+
+    // Fully nested betting panel. This deliberately follows the same structure
+    // as the working Blackjack control panels so the background and children
+    // share one coordinate space.
+    PanelWidgetClass betTypePanel {
+     visible 1 color 0.015 0.015 0.015 1 position 20 513 size 1182 180
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass betTypeTitle { visible 1 ignorepointer 1 position 30 10 size 160 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "BET TYPE" "text valign" center }
+      TextWidgetClass selectedBetDescription { visible 1 ignorepointer 1 position 400 10 size 750 26 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "SELECTED: LOW (2-6) | PAYS 2x" "text halign" right "text valign" center }
+
+      ButtonWidgetClass lowButton { visible 1 color 0.05 0.30 0.10 1 position 30 46 size 145 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "LOW 2-6" }
+      ButtonWidgetClass highButton { visible 1 color 0.13 0.29 0.48 1 position 185 46 size 170 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "HIGH 8-12" }
+      ButtonWidgetClass oddButton { visible 1 color 0.22 0.16 0.32 1 position 365 46 size 110 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "ODD" }
+      ButtonWidgetClass evenButton { visible 1 color 0.20 0.22 0.25 1 position 485 46 size 110 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "EVEN" }
+      ButtonWidgetClass doublesButton { visible 1 color 0.38 0.22 0.05 1 position 605 46 size 155 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "DOUBLES" }
+      ButtonWidgetClass exactButton { visible 1 color 0.30 0.12 0.34 1 position 770 46 size 380 38 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "EXACT TOTAL" }
+
+      PanelWidgetClass exactControlsPanel {
+       visible 0 color 0.035 0.035 0.035 1 position 730 98 size 420 50
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+        TextWidgetClass exactTargetLabel { visible 1 ignorepointer 1 position 10 13 size 90 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "TARGET" "text halign" center "text valign" center }
+        ButtonWidgetClass exactMinus { visible 1 color 0.12 0.12 0.12 1 position 110 9 size 55 32 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-" }
+        TextWidgetClass exactTargetValue { visible 1 ignorepointer 1 position 175 9 size 55 32 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "7" "text halign" center "text valign" center }
+        ButtonWidgetClass exactPlus { visible 1 color 0.12 0.12 0.12 1 position 240 9 size 55 32 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+" }
+       }
+      }
+     }
+    }
+
+    PanelWidgetClass wagerPanel {
+     visible 1 color 0.045 0.045 0.045 0.98 position 20 703 size 1182 161
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass wagerLabel { visible 1 ignorepointer 1 position 42 34 size 115 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "WAGER" "text valign" center }
+      ButtonWidgetClass betMinus100 { visible 1 color 0.12 0.12 0.12 1 position 170 34 size 110 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-100" }
+      ButtonWidgetClass betMinus10 { visible 1 color 0.12 0.12 0.12 1 position 292 34 size 95 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-10" }
+      TextWidgetClass selectedBetValue { visible 1 ignorepointer 1 position 400 34 size 150 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center "text valign" center }
+      ButtonWidgetClass betPlus10 { visible 1 color 0.12 0.12 0.12 1 position 562 34 size 95 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+10" }
+      ButtonWidgetClass betPlus100 { visible 1 color 0.12 0.12 0.12 1 position 669 34 size 110 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+100" }
+      ButtonWidgetClass rollButton { visible 1 color 0.05 0.30 0.10 1 position 795 34 size 345 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "ROLL DICE" }
+     }
+    }
+   }
+  }
+ }
+}

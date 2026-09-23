@@ -1,0 +1,76 @@
+FrameWidgetClass rootFrame {
+ visible 1 position 0 0 size 1248 920 halign center_ref valign center_ref
+ hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+  PanelWidgetClass background {
+   visible 1 ignorepointer 1 color 0.02 0.02 0.02 0.96 position 13 13 size 1222 894
+   hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style DayZDefaultPanel {
+
+    PanelWidgetClass headerPanel {
+     visible 1 ignorepointer 1 color 0.04 0.04 0.04 0.98 position 20 15 size 1182 72
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass title { visible 1 ignorepointer 1 position 250 7 size 682 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "SPIN THE WIN" "text halign" center "text valign" center }
+      TextWidgetClass subTitle { visible 1 ignorepointer 1 position 250 39 size 682 25 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Spin the wheel and test your luck." "text halign" center "text valign" center }
+      ButtonWidgetClass closeButton { visible 1 color 0.28 0.04 0.04 1 position 1126 12 size 42 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "X" }
+     }
+    }
+
+    PanelWidgetClass statsPanel {
+     visible 1 ignorepointer 1 color 0.035 0.035 0.035 0.98 position 20 95 size 1182 58
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass balanceLabel { visible 1 ignorepointer 1 position 28 13 size 100 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "BALANCE" }
+      TextWidgetClass balanceValue { visible 1 ignorepointer 1 position 128 13 size 185 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass betLabel { visible 1 ignorepointer 1 position 330 13 size 78 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "STAKE" }
+      TextWidgetClass betValue { visible 1 ignorepointer 1 position 408 13 size 120 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass resultLabel { visible 1 ignorepointer 1 position 545 13 size 95 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "RESULT" }
+      TextWidgetClass resultValue { visible 1 ignorepointer 1 position 640 13 size 205 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" }
+      TextWidgetClass jackpotLabel { visible 1 ignorepointer 1 position 850 13 size 100 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "JACKPOT" }
+      TextWidgetClass jackpotValue { visible 1 ignorepointer 1 position 950 13 size 195 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" "text halign" right }
+     }
+    }
+
+    PanelWidgetClass playPanel {
+     visible 1 ignorepointer 1 color 0.015 0.015 0.015 0.96 position 20 163 size 1182 520
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      ImageWidgetClass wheelImage {
+       visible 1 inheritalpha 0 ignorepointer 1 position 366 8 size 450 450
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h
+      }
+      ImageWidgetClass wheelLightsA {
+       visible 0 inheritalpha 0 ignorepointer 1 position 366 8 size 450 450
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h
+      }
+      ImageWidgetClass wheelLightsB {
+       visible 0 inheritalpha 0 ignorepointer 1 position 366 8 size 450 450
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h
+      }
+      ImageWidgetClass wheelPointer {
+       visible 1 inheritalpha 0 ignorepointer 1 position 546 0 size 90 68
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h
+      }
+      TextWidgetClass currentPrizeText {
+       visible 1 ignorepointer 1 position 150 458 size 882 28
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "READY TO SPIN" "text halign" center "text valign" center
+      }
+      TextWidgetClass messageText {
+       visible 1 ignorepointer 1 position 90 486 size 1002 26
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Set your wager and spin the wheel." "text halign" center "text valign" center
+      }
+     }
+    }
+
+    PanelWidgetClass wagerPanel {
+     visible 1 color 0.045 0.045 0.045 0.98 position 20 693 size 1182 171
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass wagerLabel { visible 1 ignorepointer 1 position 40 44 size 120 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "WAGER" "text valign" center }
+      ButtonWidgetClass betMinus100 { visible 1 color 0.12 0.12 0.12 1 position 165 44 size 115 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-100" }
+      ButtonWidgetClass betMinus10 { visible 1 color 0.12 0.12 0.12 1 position 295 44 size 105 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-10" }
+      TextWidgetClass selectedBetValue { visible 1 ignorepointer 1 position 415 44 size 145 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center "text valign" center }
+      ButtonWidgetClass betPlus10 { visible 1 color 0.12 0.12 0.12 1 position 575 44 size 105 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+10" }
+      ButtonWidgetClass betPlus100 { visible 1 color 0.12 0.12 0.12 1 position 695 44 size 115 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+100" }
+      ButtonWidgetClass spinButton { visible 1 color 0.05 0.30 0.10 1 position 835 44 size 305 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "SPIN WHEEL" }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,168 @@
+FrameWidgetClass rootFrame {
+ visible 1 position 0 0 size 1248 934 halign center_ref valign center_ref
+ hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+  PanelWidgetClass background {
+   visible 1 ignorepointer 1 color 0.02 0.02 0.02 0.96 position 13 13 size 1222 908
+   hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style DayZDefaultPanel {
+
+    PanelWidgetClass headerPanel {
+     visible 1 ignorepointer 1 color 0.04 0.04 0.04 0.98 position 20 15 size 1182 72
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass title { visible 1 ignorepointer 1 position 250 7 size 682 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "CRAPS" "text halign" center "text valign" center }
+      TextWidgetClass subTitle { visible 1 ignorepointer 1 position 250 39 size 682 25 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Choose your bets, then roll." "text halign" center "text valign" center }
+      ButtonWidgetClass closeButton { visible 1 color 0.28 0.04 0.04 1 position 1126 12 size 42 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "X" }
+     }
+    }
+
+    PanelWidgetClass statsPanel {
+     visible 1 ignorepointer 1 color 0.035 0.035 0.035 0.98 position 20 95 size 1182 58
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass balanceLabel { visible 1 ignorepointer 1 position 26 13 size 88 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "BALANCE" }
+      TextWidgetClass balanceValue { visible 1 ignorepointer 1 position 112 13 size 150 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass stakeLabel { visible 1 ignorepointer 1 position 270 13 size 95 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "LINE BET" }
+      TextWidgetClass stakeValue { visible 1 ignorepointer 1 position 365 13 size 90 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass sideLabel { visible 1 ignorepointer 1 position 470 13 size 100 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "SIDE BETS" }
+      TextWidgetClass sideTotalValue { visible 1 ignorepointer 1 position 570 13 size 90 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass resultLabel { visible 1 ignorepointer 1 position 675 13 size 75 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "RESULT" }
+      TextWidgetClass resultValue { visible 1 ignorepointer 1 position 750 13 size 195 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" }
+      TextWidgetClass lineValue { visible 1 ignorepointer 1 position 950 13 size 190 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "PASS LINE" "text halign" right }
+     }
+    }
+
+    PanelWidgetClass playPanel {
+     visible 1 ignorepointer 1 color 0.025 0.025 0.025 0.96 position 20 163 size 1182 235
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass rollTitle { visible 1 ignorepointer 1 position 40 9 size 1102 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DICE RESULT" "text halign" center }
+
+      PanelWidgetClass phaseBox { visible 1 ignorepointer 1 color 0.055 0.055 0.055 0.98 position 55 47 size 190 92 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass phaseLabel { visible 1 ignorepointer 1 position 10 8 size 170 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "PHASE" "text halign" center }
+       TextWidgetClass phaseValue { visible 1 ignorepointer 1 position 10 42 size 170 32 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "COME-OUT" "text halign" center }
+      } }
+
+      PanelWidgetClass die1Box { visible 1 ignorepointer 1 color 0.06 0.06 0.06 0.98 position 300 47 size 165 130 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass die1Label { visible 1 ignorepointer 1 position 8 8 size 149 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DIE 1" "text halign" center }
+       TextWidgetClass die1Value { visible 1 ignorepointer 1 position 8 38 size 149 78 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" center "text valign" center }
+      } }
+
+      PanelWidgetClass totalBox { visible 1 ignorepointer 1 color 0.08 0.08 0.08 0.98 position 471 47 size 165 130 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass totalLabel { visible 1 ignorepointer 1 position 8 8 size 149 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "TOTAL" "text halign" center }
+       TextWidgetClass totalValue { visible 1 ignorepointer 1 position 8 38 size 149 78 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" center "text valign" center }
+      } }
+
+      PanelWidgetClass die2Box { visible 1 ignorepointer 1 color 0.06 0.06 0.06 0.98 position 642 47 size 165 130 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass die2Label { visible 1 ignorepointer 1 position 8 8 size 149 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "DIE 2" "text halign" center }
+       TextWidgetClass die2Value { visible 1 ignorepointer 1 position 8 38 size 149 78 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" center "text valign" center }
+      } }
+
+      PanelWidgetClass pointBox { visible 1 ignorepointer 1 color 0.055 0.055 0.055 0.98 position 865 47 size 260 92 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass pointLabel { visible 1 ignorepointer 1 position 10 8 size 240 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "POINT" "text halign" center }
+       TextWidgetClass pointValue { visible 1 ignorepointer 1 position 10 42 size 240 32 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "OFF" "text halign" center }
+      } }
+
+      TextWidgetClass rollNumberLabel { visible 1 ignorepointer 1 position 55 153 size 105 25 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "ROLL" "text halign" center }
+      TextWidgetClass rollNumberValue { visible 1 ignorepointer 1 position 160 153 size 85 25 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" "text halign" center }
+      TextWidgetClass sideSummaryText { visible 1 ignorepointer 1 position 260 187 size 870 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Side bets unlock when a POINT is active." "text halign" center }
+     }
+    }
+
+    PanelWidgetClass tablePanel {
+     visible 1 color 0.018 0.018 0.018 0.99 position 20 408 size 1182 343
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass tableTitle { visible 1 ignorepointer 1 position 25 8 size 260 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "TABLE BETS" }
+      TextWidgetClass selectedLineText { visible 1 ignorepointer 1 position 360 8 size 790 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "SELECTED: PASS LINE" "text halign" right }
+
+      TextWidgetClass placeHeader { visible 1 ignorepointer 1 position 30 40 size 760 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "PLACE BETS" }
+
+      PanelWidgetClass pointBox4 { visible 1 color 0.045 0.045 0.045 1 position 30 68 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       PanelWidgetClass pointActive4 { visible 0 ignorepointer 1 color 0.50 0.30 0.02 0.45 position 0 0 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+       ButtonWidgetClass place4Button { visible 1 color 0.07 0.07 0.07 1 position 5 5 size 110 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "4" }
+       PanelWidgetClass placeBadge4 { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 62 39 size 50 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass placeBadgeText4 { visible 1 ignorepointer 1 position 2 0 size 46 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+       TextWidgetClass comeBadgeText4 { visible 1 ignorepointer 1 position 5 60 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+       TextWidgetClass dontComeBadgeText4 { visible 1 ignorepointer 1 position 5 80 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+      } }
+      PanelWidgetClass pointBox5 { visible 1 color 0.045 0.045 0.045 1 position 160 68 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       PanelWidgetClass pointActive5 { visible 0 ignorepointer 1 color 0.50 0.30 0.02 0.45 position 0 0 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+       ButtonWidgetClass place5Button { visible 1 color 0.07 0.07 0.07 1 position 5 5 size 110 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "5" }
+       PanelWidgetClass placeBadge5 { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 62 39 size 50 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass placeBadgeText5 { visible 1 ignorepointer 1 position 2 0 size 46 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+       TextWidgetClass comeBadgeText5 { visible 1 ignorepointer 1 position 5 60 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+       TextWidgetClass dontComeBadgeText5 { visible 1 ignorepointer 1 position 5 80 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+      } }
+      PanelWidgetClass pointBox6 { visible 1 color 0.045 0.045 0.045 1 position 290 68 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       PanelWidgetClass pointActive6 { visible 0 ignorepointer 1 color 0.50 0.30 0.02 0.45 position 0 0 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+       ButtonWidgetClass place6Button { visible 1 color 0.07 0.07 0.07 1 position 5 5 size 110 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "6" }
+       PanelWidgetClass placeBadge6 { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 62 39 size 50 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass placeBadgeText6 { visible 1 ignorepointer 1 position 2 0 size 46 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+       TextWidgetClass comeBadgeText6 { visible 1 ignorepointer 1 position 5 60 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+       TextWidgetClass dontComeBadgeText6 { visible 1 ignorepointer 1 position 5 80 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+      } }
+      PanelWidgetClass pointBox8 { visible 1 color 0.045 0.045 0.045 1 position 420 68 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       PanelWidgetClass pointActive8 { visible 0 ignorepointer 1 color 0.50 0.30 0.02 0.45 position 0 0 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+       ButtonWidgetClass place8Button { visible 1 color 0.07 0.07 0.07 1 position 5 5 size 110 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "8" }
+       PanelWidgetClass placeBadge8 { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 62 39 size 50 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass placeBadgeText8 { visible 1 ignorepointer 1 position 2 0 size 46 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+       TextWidgetClass comeBadgeText8 { visible 1 ignorepointer 1 position 5 60 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+       TextWidgetClass dontComeBadgeText8 { visible 1 ignorepointer 1 position 5 80 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+      } }
+      PanelWidgetClass pointBox9 { visible 1 color 0.045 0.045 0.045 1 position 550 68 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       PanelWidgetClass pointActive9 { visible 0 ignorepointer 1 color 0.50 0.30 0.02 0.45 position 0 0 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+       ButtonWidgetClass place9Button { visible 1 color 0.07 0.07 0.07 1 position 5 5 size 110 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "9" }
+       PanelWidgetClass placeBadge9 { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 62 39 size 50 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass placeBadgeText9 { visible 1 ignorepointer 1 position 2 0 size 46 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+       TextWidgetClass comeBadgeText9 { visible 1 ignorepointer 1 position 5 60 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+       TextWidgetClass dontComeBadgeText9 { visible 1 ignorepointer 1 position 5 80 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+      } }
+      PanelWidgetClass pointBox10 { visible 1 color 0.045 0.045 0.045 1 position 680 68 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       PanelWidgetClass pointActive10 { visible 0 ignorepointer 1 color 0.50 0.30 0.02 0.45 position 0 0 size 120 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection }
+       ButtonWidgetClass place10Button { visible 1 color 0.07 0.07 0.07 1 position 5 5 size 110 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "10" }
+       PanelWidgetClass placeBadge10 { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 62 39 size 50 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass placeBadgeText10 { visible 1 ignorepointer 1 position 2 0 size 46 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+       TextWidgetClass comeBadgeText10 { visible 1 ignorepointer 1 position 5 60 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+       TextWidgetClass dontComeBadgeText10 { visible 1 ignorepointer 1 position 5 80 size 110 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center }
+      } }
+
+      PanelWidgetClass oddsBox { visible 1 color 0.035 0.035 0.035 1 position 830 68 size 320 104 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass oddsTitle { visible 1 ignorepointer 1 position 10 8 size 300 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "LINE ODDS" "text halign" center }
+       ButtonWidgetClass oddsButton { visible 1 color 0.12 0.07 0.02 1 position 10 39 size 300 52 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "ADD ODDS" }
+       PanelWidgetClass oddsBadge { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 250 73 size 50 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass oddsBadgeText { visible 1 ignorepointer 1 position 2 0 size 46 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+      } }
+
+      PanelWidgetClass comeBox { visible 1 color 0.035 0.035 0.035 1 position 30 188 size 350 58 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       ButtonWidgetClass comeButton { visible 1 color 0.05 0.22 0.10 1 position 5 5 size 340 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "COME" }
+       PanelWidgetClass comeBadge { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 284 31 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass comeBadgeText { visible 1 ignorepointer 1 position 2 0 size 44 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+      } }
+      PanelWidgetClass dontComeBox { visible 1 color 0.035 0.035 0.035 1 position 395 188 size 350 58 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       ButtonWidgetClass dontComeButton { visible 1 color 0.24 0.07 0.08 1 position 5 5 size 340 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "DON'T COME" }
+       PanelWidgetClass dontComeBadge { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 284 31 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass dontComeBadgeText { visible 1 ignorepointer 1 position 2 0 size 44 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+      } }
+      PanelWidgetClass fieldBox { visible 1 color 0.035 0.035 0.035 1 position 760 188 size 390 58 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       ButtonWidgetClass fieldButton { visible 1 color 0.12 0.10 0.02 1 position 5 5 size 380 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "FIELD" }
+       PanelWidgetClass fieldBadge { visible 0 ignorepointer 1 color 0.58 0.37 0.02 1 position 324 31 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection { TextWidgetClass fieldBadgeText { visible 1 ignorepointer 1 position 2 0 size 44 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center } } }
+      } }
+
+      ButtonWidgetClass passLineButton { visible 1 color 0.05 0.30 0.10 1 position 30 263 size 550 55 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "PASS LINE" }
+      ButtonWidgetClass dontPassButton { visible 1 color 0.31 0.11 0.12 1 position 600 263 size 550 55 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "DON'T PASS" }
+     }
+    }
+
+    PanelWidgetClass messagePanel {
+     visible 1 ignorepointer 1 color 0.025 0.025 0.025 0.98 position 20 761 size 1182 68
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass messageMainText { visible 1 ignorepointer 1 position 24 5 size 1134 32 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "Choose PASS LINE or DON'T PASS, set your wager, then roll." "text halign" center "text valign" center }
+      TextWidgetClass messageSubText { visible 1 ignorepointer 1 position 24 37 size 1134 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "" "text halign" center "text valign" center }
+     }
+    }
+
+    PanelWidgetClass wagerPanel {
+     visible 1 color 0.045 0.045 0.045 0.98 position 20 839 size 1182 70
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass wagerLabel { visible 1 ignorepointer 1 position 25 15 size 80 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "CHIP" "text valign" center }
+      ButtonWidgetClass betMinus100 { visible 1 color 0.12 0.12 0.12 1 position 105 15 size 90 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-100" }
+      ButtonWidgetClass betMinus10 { visible 1 color 0.12 0.12 0.12 1 position 203 15 size 76 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-10" }
+      TextWidgetClass selectedBetValue { visible 1 ignorepointer 1 position 286 15 size 100 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center "text valign" center }
+      ButtonWidgetClass betPlus10 { visible 1 color 0.12 0.12 0.12 1 position 393 15 size 76 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+10" }
+      ButtonWidgetClass betPlus100 { visible 1 color 0.12 0.12 0.12 1 position 477 15 size 90 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+100" }
+      ButtonWidgetClass undoButton { visible 1 color 0.11 0.11 0.11 1 position 580 15 size 105 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "UNDO" }
+      ButtonWidgetClass clearButton { visible 1 color 0.15 0.08 0.08 1 position 695 15 size 105 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "CLEAR" }
+      ButtonWidgetClass rollButton { visible 1 color 0.05 0.30 0.10 1 position 820 15 size 330 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "ROLL DICE" }
+     }
+    }
+   }
+  }
+ }
+}

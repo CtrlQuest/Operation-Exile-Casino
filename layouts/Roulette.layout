@@ -1,0 +1,600 @@
+FrameWidgetClass rootFrame {
+ visible 1 position 0 0 size 1320 940 halign center_ref valign center_ref
+ hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+  PanelWidgetClass background {
+   visible 1 ignorepointer 1 color 0.02 0.02 0.02 0.96 position 10 10 size 1300 920
+   hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style DayZDefaultPanel {
+
+    PanelWidgetClass headerPanel {
+     visible 1 color 0.025 0.025 0.025 0.99 position 20 15 size 1260 72
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass title { visible 1 ignorepointer 1 position 260 8 size 740 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "ROULETTE" "text halign" center "text valign" center }
+      TextWidgetClass subtitle { visible 1 ignorepointer 1 position 245 39 size 770 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Double-zero Vegas-style table - place multiple bets, then spin." "text halign" center "text valign" center }
+      ButtonWidgetClass closeButton { visible 1 color 0.28 0.04 0.04 1 position 1200 12 size 44 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "X" }
+     }
+    }
+
+    PanelWidgetClass statsPanel {
+     visible 1 color 0.025 0.025 0.025 0.99 position 20 95 size 1260 56
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass balanceLabel { visible 1 ignorepointer 1 position 32 13 size 90 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "BALANCE" }
+      TextWidgetClass balanceValue { visible 1 ignorepointer 1 position 122 13 size 175 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass betLabel { visible 1 ignorepointer 1 position 305 13 size 105 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "TOTAL BET" }
+      TextWidgetClass betValue { visible 1 ignorepointer 1 position 410 13 size 115 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass resultLabel { visible 1 ignorepointer 1 position 555 13 size 80 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "RESULT" }
+      TextWidgetClass resultValue { visible 1 ignorepointer 1 position 635 13 size 180 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" }
+      TextWidgetClass lastSpinLabel { visible 1 ignorepointer 1 position 860 13 size 110 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "LAST SPIN" }
+      TextWidgetClass lastSpinValue { visible 1 ignorepointer 1 position 975 13 size 245 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" right }
+     }
+    }
+
+    PanelWidgetClass resultPanel {
+     visible 1 color 0.018 0.018 0.018 0.98 position 20 161 size 1260 125
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass resultTitle { visible 1 ignorepointer 1 position 30 8 size 1200 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "WHEEL RESULT" "text halign" center }
+      TextWidgetClass winningNumber { visible 1 ignorepointer 1 position 450 29 size 360 48 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" "text halign" center "text valign" center }
+      TextWidgetClass winningColor { visible 1 ignorepointer 1 position 450 75 size 360 22 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "WAITING FOR SPIN" "text halign" center }
+      TextWidgetClass messageText { visible 1 ignorepointer 1 position 30 99 size 1200 22 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Choose a chip value, place bets, then spin." "text halign" center }
+     }
+    }
+
+    PanelWidgetClass bettingPanel {
+     visible 1 color 0.015 0.015 0.015 1 position 20 296 size 1260 465
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass betBoardTitle { visible 1 ignorepointer 1 position 25 8 size 200 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "BETTING BOARD" }
+      TextWidgetClass selectedBetDescription { visible 1 ignorepointer 1 position 470 8 size 660 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "MODE: STRAIGHT   |   CHIP 100   |   PAYS 35:1" "text halign" right }
+
+      TextWidgetClass insideLabel { visible 1 ignorepointer 1 position 25 39 size 112 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "INSIDE BET" "text valign" center }
+      ButtonWidgetClass modeStraight { visible 1 color 0.10 0.10 0.10 1 position 145 39 size 135 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "STRAIGHT" }
+      ButtonWidgetClass modeSplit { visible 1 color 0.10 0.10 0.10 1 position 290 39 size 125 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "SPLIT" }
+      ButtonWidgetClass modeStreet { visible 1 color 0.10 0.10 0.10 1 position 425 39 size 125 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "STREET" }
+      ButtonWidgetClass modeCorner { visible 1 color 0.10 0.10 0.10 1 position 560 39 size 125 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "CORNER" }
+      ButtonWidgetClass modeSixLine { visible 1 color 0.10 0.10 0.10 1 position 695 39 size 135 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "SIX LINE" }
+      ButtonWidgetClass topLineButton { visible 1 color 0.30 0.12 0.34 1 position 840 39 size 175 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "TOP LINE" }
+
+      ButtonWidgetClass num0 { visible 1 color 0.05 0.36 0.12 1 position 25 86 size 64 72 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "0" }
+      ButtonWidgetClass num00 { visible 1 color 0.05 0.36 0.12 1 position 25 164 size 64 72 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "00" }
+
+      ButtonWidgetClass num3 { visible 1 color 0.48 0.05 0.05 1 position 99 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "3" }
+      ButtonWidgetClass num6 { visible 1 color 0.035 0.035 0.035 1 position 177 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "6" }
+      ButtonWidgetClass num9 { visible 1 color 0.48 0.05 0.05 1 position 255 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "9" }
+      ButtonWidgetClass num12 { visible 1 color 0.48 0.05 0.05 1 position 333 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "12" }
+      ButtonWidgetClass num15 { visible 1 color 0.035 0.035 0.035 1 position 411 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "15" }
+      ButtonWidgetClass num18 { visible 1 color 0.48 0.05 0.05 1 position 489 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "18" }
+      ButtonWidgetClass num21 { visible 1 color 0.48 0.05 0.05 1 position 567 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "21" }
+      ButtonWidgetClass num24 { visible 1 color 0.035 0.035 0.035 1 position 645 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "24" }
+      ButtonWidgetClass num27 { visible 1 color 0.48 0.05 0.05 1 position 723 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "27" }
+      ButtonWidgetClass num30 { visible 1 color 0.48 0.05 0.05 1 position 801 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "30" }
+      ButtonWidgetClass num33 { visible 1 color 0.035 0.035 0.035 1 position 879 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "33" }
+      ButtonWidgetClass num36 { visible 1 color 0.48 0.05 0.05 1 position 957 86 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "36" }
+
+      ButtonWidgetClass num2 { visible 1 color 0.035 0.035 0.035 1 position 99 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "2" }
+      ButtonWidgetClass num5 { visible 1 color 0.48 0.05 0.05 1 position 177 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "5" }
+      ButtonWidgetClass num8 { visible 1 color 0.035 0.035 0.035 1 position 255 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "8" }
+      ButtonWidgetClass num11 { visible 1 color 0.035 0.035 0.035 1 position 333 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "11" }
+      ButtonWidgetClass num14 { visible 1 color 0.48 0.05 0.05 1 position 411 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "14" }
+      ButtonWidgetClass num17 { visible 1 color 0.035 0.035 0.035 1 position 489 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "17" }
+      ButtonWidgetClass num20 { visible 1 color 0.035 0.035 0.035 1 position 567 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "20" }
+      ButtonWidgetClass num23 { visible 1 color 0.48 0.05 0.05 1 position 645 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "23" }
+      ButtonWidgetClass num26 { visible 1 color 0.035 0.035 0.035 1 position 723 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "26" }
+      ButtonWidgetClass num29 { visible 1 color 0.035 0.035 0.035 1 position 801 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "29" }
+      ButtonWidgetClass num32 { visible 1 color 0.48 0.05 0.05 1 position 879 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "32" }
+      ButtonWidgetClass num35 { visible 1 color 0.035 0.035 0.035 1 position 957 136 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "35" }
+
+      ButtonWidgetClass num1 { visible 1 color 0.48 0.05 0.05 1 position 99 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "1" }
+      ButtonWidgetClass num4 { visible 1 color 0.035 0.035 0.035 1 position 177 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "4" }
+      ButtonWidgetClass num7 { visible 1 color 0.48 0.05 0.05 1 position 255 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "7" }
+      ButtonWidgetClass num10 { visible 1 color 0.035 0.035 0.035 1 position 333 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "10" }
+      ButtonWidgetClass num13 { visible 1 color 0.035 0.035 0.035 1 position 411 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "13" }
+      ButtonWidgetClass num16 { visible 1 color 0.48 0.05 0.05 1 position 489 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "16" }
+      ButtonWidgetClass num19 { visible 1 color 0.48 0.05 0.05 1 position 567 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "19" }
+      ButtonWidgetClass num22 { visible 1 color 0.035 0.035 0.035 1 position 645 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "22" }
+      ButtonWidgetClass num25 { visible 1 color 0.48 0.05 0.05 1 position 723 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "25" }
+      ButtonWidgetClass num28 { visible 1 color 0.035 0.035 0.035 1 position 801 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "28" }
+      ButtonWidgetClass num31 { visible 1 color 0.035 0.035 0.035 1 position 879 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "31" }
+      ButtonWidgetClass num34 { visible 1 color 0.48 0.05 0.05 1 position 957 186 size 70 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "34" }
+
+
+      // Visual chip amount markers for straight-up wagers.
+      PanelWidgetClass chipBadge0 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 37 136 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText0 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge00 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 37 214 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText00 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge1 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 117 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText1 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge2 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 117 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText2 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge3 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 117 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText3 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge4 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 195 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText4 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge5 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 195 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText5 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge6 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 195 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText6 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge7 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 273 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText7 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge8 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 273 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText8 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge9 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 273 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText9 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge10 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 351 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText10 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge11 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 351 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText11 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge12 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 351 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText12 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge13 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 429 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText13 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge14 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 429 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText14 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge15 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 429 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText15 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge16 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 507 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText16 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge17 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 507 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText17 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge18 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 507 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText18 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge19 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 585 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText19 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge20 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 585 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText20 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge21 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 585 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText21 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge22 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 663 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText22 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge23 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 663 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText23 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge24 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 663 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText24 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge25 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 741 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText25 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge26 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 741 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText26 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge27 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 741 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText27 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge28 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 819 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText28 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge29 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 819 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText29 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge30 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 819 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText30 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge31 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 897 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText31 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge32 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 897 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText32 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge33 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 897 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText33 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge34 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 975 208 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText34 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge35 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 975 158 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText35 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass chipBadge36 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 975 108 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass chipBadgeText36 { visible 1 ignorepointer 1 position 0 0 size 48 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+
+      ButtonWidgetClass column3Button { visible 1 color 0.10 0.10 0.10 1 position 1040 86 size 90 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "COL 3" }
+      ButtonWidgetClass column2Button { visible 1 color 0.10 0.10 0.10 1 position 1040 136 size 90 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "COL 2" }
+      ButtonWidgetClass column1Button { visible 1 color 0.10 0.10 0.10 1 position 1040 186 size 90 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "COL 1" }
+
+      ButtonWidgetClass dozen1Button { visible 1 color 0.10 0.10 0.10 1 position 99 239 size 304 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "1ST 12" }
+      ButtonWidgetClass dozen2Button { visible 1 color 0.10 0.10 0.10 1 position 411 239 size 304 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "2ND 12" }
+      ButtonWidgetClass dozen3Button { visible 1 color 0.10 0.10 0.10 1 position 723 239 size 304 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "3RD 12" }
+
+      ButtonWidgetClass lowButton { visible 1 color 0.10 0.10 0.10 1 position 99 280 size 145 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "1-18" }
+      ButtonWidgetClass evenButton { visible 1 color 0.10 0.10 0.10 1 position 253 280 size 145 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "EVEN" }
+      ButtonWidgetClass redButton { visible 1 color 0.48 0.05 0.05 1 position 407 280 size 145 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "RED" }
+      ButtonWidgetClass blackButton { visible 1 color 0.035 0.035 0.035 1 position 561 280 size 145 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "BLACK" }
+      ButtonWidgetClass oddButton { visible 1 color 0.10 0.10 0.10 1 position 715 280 size 145 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "ODD" }
+      ButtonWidgetClass highButton { visible 1 color 0.10 0.10 0.10 1 position 869 280 size 158 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "19-36" }
+
+
+      // v0.9.3: chip amount markers for all non-straight Roulette wagers.
+      PanelWidgetClass betMarker_S1_2 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 113 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S1_2 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S1_4 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 152 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S1_4 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S2_3 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 113 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S2_3 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S2_5 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 152 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S2_5 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S3_6 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 152 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S3_6 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S4_5 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 191 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S4_5 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S4_7 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 230 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S4_7 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S5_6 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 191 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S5_6 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S5_8 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 230 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S5_8 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S6_9 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 230 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S6_9 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S7_8 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 269 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S7_8 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S7_10 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 308 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S7_10 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S8_9 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 269 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S8_9 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S8_11 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 308 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S8_11 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S9_12 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 308 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S9_12 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S10_11 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 347 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S10_11 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S10_13 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 386 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S10_13 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S11_12 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 347 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S11_12 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S11_14 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 386 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S11_14 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S12_15 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 386 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S12_15 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S13_14 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 425 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S13_14 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S13_16 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 464 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S13_16 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S14_15 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 425 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S14_15 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S14_17 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 464 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S14_17 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S15_18 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 464 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S15_18 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S16_17 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 503 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S16_17 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S16_19 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 542 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S16_19 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S17_18 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 503 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S17_18 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S17_20 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 542 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S17_20 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S18_21 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 542 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S18_21 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S19_20 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 581 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S19_20 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S19_22 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 620 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S19_22 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S20_21 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 581 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S20_21 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S20_23 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 620 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S20_23 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S21_24 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 620 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S21_24 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S22_23 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 659 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S22_23 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S22_25 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 698 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S22_25 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S23_24 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 659 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S23_24 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S23_26 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 698 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S23_26 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S24_27 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 698 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S24_27 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S25_26 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 737 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S25_26 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S25_28 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 776 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S25_28 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S26_27 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 737 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S26_27 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S26_29 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 776 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S26_29 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S27_30 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 776 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S27_30 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S28_29 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 815 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S28_29 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S28_31 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 854 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S28_31 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S29_30 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 815 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S29_30 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S29_32 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 854 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S29_32 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S30_33 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 854 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S30_33 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S31_32 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 893 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S31_32 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S31_34 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 932 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S31_34 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S32_33 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 893 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S32_33 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S32_35 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 932 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S32_35 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S33_36 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 932 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S33_36 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S34_35 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 971 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S34_35 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_S35_36 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 971 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_S35_36 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T1 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 113 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T1 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T4 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 191 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T4 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T7 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 269 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T7 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T10 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 347 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T10 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T13 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 425 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T13 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T16 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 503 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T16 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T19 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 581 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T19 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T22 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 659 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T22 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T25 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 737 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T25 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T28 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 815 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T28 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T31 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 893 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T31 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_T34 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 971 69 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_T34 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K1 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 152 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K1 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K2 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 152 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K2 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K4 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 230 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K4 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K5 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 230 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K5 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K7 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 308 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K7 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K8 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 308 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K8 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K10 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 386 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K10 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K11 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 386 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K11 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K13 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 464 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K13 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K14 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 464 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K14 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K16 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 542 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K16 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K17 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 542 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K17 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K19 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 620 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K19 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K20 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 620 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K20 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K22 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 698 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K22 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K23 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 698 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K23 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K25 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 776 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K25 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K26 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 776 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K26 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K28 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 854 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K28 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K29 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 854 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K29 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K31 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 932 174 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K31 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_K32 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 932 124 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_K32 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L1 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 152 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L1 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L4 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 230 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L4 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L7 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 308 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L7 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L10 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 386 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L10 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L13 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 464 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L13 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L16 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 542 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L16 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L19 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 620 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L19 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L22 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 698 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L22 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L25 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 776 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L25 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L28 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 854 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L28 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_L31 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 932 219 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_L31 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_TOP { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 971 45 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_TOP { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_C3 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 1086 99 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_C3 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_C2 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 1086 149 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_C2 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_C1 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 1086 199 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_C1 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_D1 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 359 247 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_D1 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_D2 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 671 247 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_D2 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_D3 { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 983 247 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_D3 { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_LOW { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 200 288 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_LOW { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_EVEN { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 354 288 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_EVEN { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_RED { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 508 288 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_RED { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_BLACK { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 662 288 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_BLACK { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_ODD { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 816 288 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_ODD { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+      PanelWidgetClass betMarker_HIGH { visible 0 ignorepointer 1 color 0.70 0.49 0.06 0.98 position 983 288 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+       TextWidgetClass betMarkerText_HIGH { visible 1 ignorepointer 1 position 0 0 size 42 18 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "" "text halign" center "text valign" center }
+      } }
+
+      TextWidgetClass activeBetsText { visible 1 ignorepointer 1 position 25 320 size 1105 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "BETS 0   |   TOTAL 0" "text valign" center }
+      TextWidgetClass activeHelpText { visible 1 ignorepointer 1 position 25 352 size 1105 22 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "STRAIGHT: click one number. Outside bets can be added at any time." "text valign" center }
+      TextWidgetClass helpText { visible 1 ignorepointer 1 position 25 377 size 1105 32 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "STRAIGHT 35:1 | SPLIT 17:1 | STREET 11:1 | CORNER 8:1 | TOP 6:1 | SIX 5:1 | DOZEN/COL 2:1 | OUTSIDE 1:1" "text halign" center "text valign" center }
+     }
+    }
+
+    PanelWidgetClass wagerPanel {
+     visible 1 color 0.035 0.035 0.035 0.99 position 20 771 size 1260 120
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass chipLabel { visible 1 ignorepointer 1 position 26 34 size 80 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "CHIP" "text valign" center }
+      ButtonWidgetClass chipMinus100 { visible 1 color 0.10 0.10 0.10 1 position 105 34 size 95 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-100" }
+      ButtonWidgetClass chipMinus10 { visible 1 color 0.10 0.10 0.10 1 position 208 34 size 80 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-10" }
+      TextWidgetClass selectedChipValue { visible 1 ignorepointer 1 position 296 34 size 105 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center "text valign" center }
+      ButtonWidgetClass chipPlus10 { visible 1 color 0.10 0.10 0.10 1 position 409 34 size 80 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+10" }
+      ButtonWidgetClass chipPlus100 { visible 1 color 0.10 0.10 0.10 1 position 497 34 size 95 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+100" }
+      ButtonWidgetClass undoButton { visible 1 color 0.18 0.14 0.05 1 position 612 34 size 125 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "UNDO" }
+      ButtonWidgetClass clearButton { visible 1 color 0.26 0.05 0.05 1 position 747 34 size 125 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "CLEAR" }
+      ButtonWidgetClass spinButton { visible 1 color 0.05 0.30 0.10 1 position 892 34 size 330 40 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "SPIN ROULETTE" }
+     }
+    }
+   }
+  }
+ }
+}
