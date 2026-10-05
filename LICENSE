@@ -1,0 +1,111 @@
+Operation Exile: Casino Source Available License v1.0
+Copyright (c) 2026 CtrlQuest / Operation Exile
+All rights reserved except as expressly granted below.
+
+1. DEFINITIONS
+
+"Project" means the Operation Exile: Casino source code and original project files made available by CtrlQuest / Operation Exile.
+
+"Official Workshop Release" means the official Operation Exile: Casino Steam Workshop item published by CtrlQuest / Operation Exile:
+https://steamcommunity.com/sharedfiles/filedetails/?id=3803931966
+
+"Derivative Workshop Release" means a separate Steam Workshop upload based in whole or in part on this Project.
+
+"Meaningful Retexture" means genuine original visual customisation of the Project, such as replacement or substantial modification of card artwork, card backs, wheel artwork, slot-machine artwork, UI textures, game artwork, branding, or other visible textures. Changing only a name, logo, metadata, config value, file path, colour value, or a token/minor texture is not a Meaningful Retexture.
+
+2. PERMISSION TO USE AND MODIFY
+
+Subject to this License, you may:
+
+(a) view, study, copy, and modify the Project source code;
+(b) use modified or unmodified source code on servers you operate;
+(c) create private builds for development, testing, or use on your own DayZ server;
+(d) fork the source repository for development and contribution purposes, provided this License and the required attribution are retained; and
+(e) create and distribute a Derivative Workshop Release only under the conditions in Section 4.
+
+3. NORMAL SERVER USE
+
+For ordinary public server use, server owners are encouraged to use the Official Workshop Release rather than creating a separate Workshop upload.
+
+Use of the Official Workshop Release on a monetised DayZ server is permitted by this License, provided the server operator complies with all applicable Bohemia Interactive, Steam, platform, and third-party rules. This License does not grant permission to sell the Project itself or to charge specifically for access to the Project, its casino games, its items, or its source code.
+
+4. STEAM WORKSHOP REDISTRIBUTION
+
+You may not upload an unchanged or minimally modified copy of Operation Exile: Casino to the Steam Workshop.
+
+A Derivative Workshop Release is permitted only if all of the following conditions are met:
+
+(a) the release contains a Meaningful Retexture using visual work that you created or have permission to redistribute;
+(b) the release is clearly identified as a modified or retextured derivative of Operation Exile: Casino;
+(c) it does not present itself as the official Operation Exile: Casino release;
+(d) it prominently credits "CtrlQuest / Operation Exile" as the original project creator;
+(e) its Workshop description includes a visible link to the Official Workshop Release:
+    https://steamcommunity.com/sharedfiles/filedetails/?id=3803931966
+(f) its Workshop description includes a visible link to the source repository:
+    https://github.com/CtrlQuest/Operation-Exile-Casino
+(g) this License, or a clear link to it, is retained with redistributed source covered by this License; and
+(h) all third-party asset licences and attribution requirements are independently respected.
+
+Code changes, configuration changes, renaming, repacking, changing metadata, changing only branding, or changing only one insignificant texture are not sufficient by themselves to permit a separate Steam Workshop upload.
+
+5. NO UNCHANGED REPACKS OR MIRRORS
+
+Except for normal source-code forks permitted by Section 2(d), you may not:
+
+(a) repack and publish the complete Project as your own mod;
+(b) mirror the complete packaged Workshop mod as a replacement Workshop item;
+(c) upload an unchanged or trivially altered PBO/mod package to Steam Workshop; or
+(d) claim authorship of the original Operation Exile: Casino project.
+
+6. BRANDING, TRADEMARKS, AND ORIGINAL ARTWORK
+
+The names "Operation Exile" and "Operation Exile: Casino", associated logos, branding, and original project identity are not licensed for use as the branding of an independent derivative release except to provide factual attribution such as "Based on Operation Exile: Casino".
+
+A Derivative Workshop Release should use its own name and branding unless separate written permission is granted by CtrlQuest / Operation Exile.
+
+Original visual assets supplied with the Project may be modified for your own server. Redistribution of those original assets as part of a Derivative Workshop Release is permitted only to the extent necessary for a Meaningful Retexture and subject to this License and any third-party rights identified in THIRD_PARTY_LICENSES.md.
+
+7. THIRD-PARTY MATERIAL
+
+Third-party code, audio, artwork, fonts, models, textures, or other assets are not relicensed by this License.
+
+They remain governed by their original licences and terms. See THIRD_PARTY_LICENSES.md for known third-party material and verification notes.
+
+You are responsible for ensuring that you have the right to redistribute any third-party material included in your derivative build.
+
+8. ATTRIBUTION
+
+Where this License permits redistribution, the following attribution must be retained in a reasonably visible place:
+
+Operation Exile: Casino
+Original project by CtrlQuest / Operation Exile
+Official Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3803931966
+Source: https://github.com/CtrlQuest/Operation-Exile-Casino
+
+9. CONTRIBUTIONS
+
+Unless otherwise agreed in writing, code or assets intentionally submitted to the official Operation Exile: Casino repository may be incorporated into the Project and distributed under this License. Contributors must have the right to submit their contribution.
+
+10. NO WARRANTY
+
+THE PROJECT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR FITNESS FOR USE ON A PARTICULAR SERVER.
+
+IN NO EVENT SHALL CTRLQUEST, OPERATION EXILE, OR PROJECT CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGE, DATA LOSS, ECONOMY LOSS, SERVER ISSUE, OR OTHER LIABILITY ARISING FROM THE PROJECT OR ITS USE.
+
+11. TERMINATION
+
+Your rights under this License terminate automatically if you materially breach its terms and fail to cure the breach after being notified where reasonably possible.
+
+Upon termination, you must stop distributing any version of the Project that violates this License. Rights may be restored by written permission from CtrlQuest / Operation Exile.
+
+12. NO OPEN-SOURCE REPRESENTATION
+
+This is a source-available licence with redistribution conditions. It is not the MIT License and is not intended to qualify as an OSI-approved open-source licence.
+
+13. SEVERABILITY
+
+If any provision of this License is held unenforceable, the remaining provisions remain in effect to the maximum extent permitted by law.
+
+14. PERMISSION OUTSIDE THIS LICENSE
+
+If you want to use or redistribute the Project in a way not permitted here, contact CtrlQuest / Operation Exile for separate written permission.
