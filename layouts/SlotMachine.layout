@@ -1,0 +1,123 @@
+FrameWidgetClass rootFrame {
+ visible 1 position 0 0 size 1248 920 halign center_ref valign center_ref
+ hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+  PanelWidgetClass background {
+   visible 1 ignorepointer 1 color 0.02 0.02 0.02 0.97 position 13 13 size 1222 894
+   hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style DayZDefaultPanel {
+
+    PanelWidgetClass headerPanel {
+     visible 1 ignorepointer 1 color 0.04 0.04 0.04 0.98 position 20 15 size 1182 72
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass title { visible 1 ignorepointer 1 position 250 7 size 682 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "SLOT MACHINE" "text halign" center "text valign" center }
+      TextWidgetClass subTitle { visible 1 ignorepointer 1 position 250 40 size 682 22 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Classic three-reel slots with a progressive jackpot." "text halign" center "text valign" center }
+      ButtonWidgetClass closeButton { visible 1 color 0.28 0.04 0.04 1 position 1126 12 size 42 42 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "X" }
+     }
+    }
+
+    PanelWidgetClass statsPanel {
+     visible 1 ignorepointer 1 color 0.035 0.035 0.035 0.98 position 20 95 size 1182 58
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass balanceLabel { visible 1 ignorepointer 1 position 28 13 size 88 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "BALANCE" }
+      TextWidgetClass balanceValue { visible 1 ignorepointer 1 position 116 13 size 170 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass betLabel { visible 1 ignorepointer 1 position 305 13 size 48 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "BET" }
+      TextWidgetClass betValue { visible 1 ignorepointer 1 position 353 13 size 105 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" }
+      TextWidgetClass resultLabel { visible 1 ignorepointer 1 position 480 13 size 78 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "RESULT" }
+      TextWidgetClass resultValue { visible 1 ignorepointer 1 position 558 13 size 248 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "-" }
+      TextWidgetClass jackpotLabel { visible 1 ignorepointer 1 position 825 13 size 92 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "JACKPOT" }
+      TextWidgetClass jackpotValue { visible 1 ignorepointer 1 position 917 13 size 228 30 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "0" "text halign" right }
+     }
+    }
+
+    PanelWidgetClass machinePanel {
+     visible 1 ignorepointer 1 color 0.055 0.025 0.025 0.98 position 20 163 size 1182 500
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass jackpotBanner { visible 1 ignorepointer 1 position 260 12 size 662 36 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "PROGRESSIVE JACKPOT" "text halign" center "text valign" center }
+      TextWidgetClass jackpotHintText { visible 1 ignorepointer 1 position 205 50 size 772 23 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "MAX BET REQUIRED FOR JACKPOT" "text halign" center "text valign" center }
+      // v0.15.6: compact side-by-side framed reel windows.
+      PanelWidgetClass reelHousing {
+       visible 1 ignorepointer 1 color 0.012 0.012 0.012 1 position 292 72 size 598 294
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+
+        PanelWidgetClass reel1Panel {
+         visible 1 ignorepointer 1 color 0 0 0 0 position 4 4 size 190 285
+         hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+          ImageWidgetClass reel1Backdrop { visible 1 inheritalpha 0 ignorepointer 1 position 0 0 size 190 285 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+          ImageWidgetClass reel1Top { visible 1 inheritalpha 0 ignorepointer 1 position 61 32 size 68 62 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+          ImageWidgetClass reel1Center { visible 1 inheritalpha 0 ignorepointer 1 position 52 103 size 86 80 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+          ImageWidgetClass reel1Bottom { visible 1 inheritalpha 0 ignorepointer 1 position 61 194 size 68 62 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+         }
+        }
+
+        PanelWidgetClass reel2Panel {
+         visible 1 ignorepointer 1 color 0 0 0 0 position 204 4 size 190 285
+         hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+          ImageWidgetClass reel2Backdrop { visible 1 inheritalpha 0 ignorepointer 1 position 0 0 size 190 285 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+          ImageWidgetClass reel2Top { visible 1 inheritalpha 0 ignorepointer 1 position 61 32 size 68 62 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+          ImageWidgetClass reel2Center { visible 1 inheritalpha 0 ignorepointer 1 position 52 103 size 86 80 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+          ImageWidgetClass reel2Bottom { visible 1 inheritalpha 0 ignorepointer 1 position 61 194 size 68 62 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+         }
+        }
+
+        PanelWidgetClass reel3Panel {
+         visible 1 ignorepointer 1 color 0 0 0 0 position 404 4 size 190 285
+         hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 {
+          ImageWidgetClass reel3Backdrop { visible 1 inheritalpha 0 ignorepointer 1 position 0 0 size 190 285 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+          ImageWidgetClass reel3Top { visible 1 inheritalpha 0 ignorepointer 1 position 61 32 size 68 62 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+          ImageWidgetClass reel3Center { visible 1 inheritalpha 0 ignorepointer 1 position 52 103 size 86 80 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+          ImageWidgetClass reel3Bottom { visible 1 inheritalpha 0 ignorepointer 1 position 61 194 size 68 62 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+         }
+        }
+
+        // Centre-row payline accents across the three reel windows.
+        PanelWidgetClass paylineTop { visible 1 ignorepointer 1 color 0.55 0.09 0.09 0.30 position 14 110 size 570 2 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 }
+        PanelWidgetClass paylineBottom { visible 1 ignorepointer 1 color 0.55 0.09 0.09 0.30 position 14 185 size 570 2 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 }
+       }
+      }
+
+      PanelWidgetClass payoutPanel {
+       visible 1 ignorepointer 1 color 0.035 0.035 0.035 0.92 position 70 368 size 1042 80
+       hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+        TextWidgetClass payoutTitle { visible 1 ignorepointer 1 position 16 3 size 1010 19 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "PAYOUTS   |   PAIR = BET BACK   |   7-7-7 = JACKPOT ON ELIGIBLE BET" "text halign" center "text valign" center }
+
+        ImageWidgetClass payLemonIcon { visible 1 inheritalpha 0 ignorepointer 1 position 40 27 size 44 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+        TextWidgetClass payLemonText { visible 1 ignorepointer 1 position 88 35 size 60 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "x5" }
+
+        ImageWidgetClass payCherryIcon { visible 1 inheritalpha 0 ignorepointer 1 position 188 27 size 44 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+        TextWidgetClass payCherryText { visible 1 ignorepointer 1 position 236 35 size 60 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "x8" }
+
+        ImageWidgetClass payGrapeIcon { visible 1 inheritalpha 0 ignorepointer 1 position 336 27 size 44 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+        TextWidgetClass payGrapeText { visible 1 ignorepointer 1 position 384 35 size 66 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "x12" }
+
+        ImageWidgetClass payBellIcon { visible 1 inheritalpha 0 ignorepointer 1 position 494 27 size 44 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+        TextWidgetClass payBellText { visible 1 ignorepointer 1 position 542 35 size 66 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "x18" }
+
+        ImageWidgetClass payBarIcon { visible 1 inheritalpha 0 ignorepointer 1 position 652 27 size 44 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+        TextWidgetClass payBarText { visible 1 ignorepointer 1 position 700 35 size 66 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "x30" }
+
+        ImageWidgetClass paySevenIcon { visible 1 inheritalpha 0 ignorepointer 1 position 810 27 size 44 44 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 scaled 1 mode blend "src alpha" 1 "stretch mode" stretch_w_h }
+        TextWidgetClass paySevenText { visible 1 ignorepointer 1 position 858 35 size 145 28 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "x75 / JACKPOT" }
+       }
+      }
+
+      TextWidgetClass messageText { visible 1 ignorepointer 1 position 95 458 size 992 29 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Choose a wager and spin." "text halign" center "text valign" center }
+     }
+    }
+
+    PanelWidgetClass wagerPanel {
+     visible 1 color 0.045 0.045 0.045 0.98 position 20 673 size 1182 191
+     hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style editor_selection {
+      TextWidgetClass wagerLabel { visible 1 ignorepointer 1 position 45 45 size 95 34 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "WAGER" "text valign" center }
+      ButtonWidgetClass betMinusLarge { visible 1 color 0.12 0.12 0.12 1 position 155 44 size 105 36 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-100" }
+      ButtonWidgetClass betMinusSmall { visible 1 color 0.12 0.12 0.12 1 position 273 44 size 95 36 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "-10" }
+      TextWidgetClass selectedBetValue { visible 1 ignorepointer 1 position 379 44 size 130 36 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style Bold text "100" "text halign" center "text valign" center }
+      ButtonWidgetClass betPlusSmall { visible 1 color 0.12 0.12 0.12 1 position 520 44 size 95 36 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+10" }
+      ButtonWidgetClass betPlusLarge { visible 1 color 0.12 0.12 0.12 1 position 628 44 size 105 36 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "+100" }
+      ButtonWidgetClass maxBetButton { visible 1 color 0.18 0.12 0.03 1 position 749 44 size 130 36 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "MAX" }
+      ButtonWidgetClass spinButton { visible 1 color 0.05 0.30 0.10 1 position 900 44 size 240 36 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 style MenuDefault text "SPIN" }
+      TextWidgetClass wagerHelp { visible 1 ignorepointer 1 position 155 103 size 872 24 hexactpos 1 vexactpos 1 hexactsize 1 vexactsize 1 text "Shared progressive jackpot across all Slot Machine stations." "text halign" center "text valign" center }
+     }
+    }
+   }
+  }
+ }
+}
