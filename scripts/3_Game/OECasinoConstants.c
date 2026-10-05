@@ -256,3 +256,42 @@ static const int OE_POKER_HAND_FOUR_KIND      = 7;
 static const int OE_POKER_HAND_STRAIGHT_FLUSH = 8;
 static const int OE_POKER_HAND_ROYAL_FLUSH    = 9;
 
+
+// Progressive 3-reel Slot Machine game id, RPCs, states and symbols.
+static const string OE_CASINO_GAME_SLOT_MACHINE = "slot_machine";
+static const string OE_CASINO_SLOT_JACKPOT_FILE = "$profile:OperationExileCasino\\SlotMachineJackpot.json";
+
+static const int OE_CASINO_RPC_SLOT_SYNC  = 1766101;
+static const int OE_CASINO_RPC_SLOT_SPIN  = 1766102;
+static const int OE_CASINO_RPC_SLOT_STATE = 1766103;
+
+static const int OE_SLOT_STATUS_IDLE    = 0;
+static const int OE_SLOT_STATUS_LOSS    = 1;
+static const int OE_SLOT_STATUS_RETURN  = 2;
+static const int OE_SLOT_STATUS_WIN     = 3;
+static const int OE_SLOT_STATUS_JACKPOT = 4;
+static const int OE_SLOT_STATUS_ERROR   = 5;
+
+static const int OE_SLOT_SYMBOL_LEMON  = 0;
+static const int OE_SLOT_SYMBOL_CHERRY = 1;
+static const int OE_SLOT_SYMBOL_GRAPE  = 2;
+static const int OE_SLOT_SYMBOL_BELL   = 3;
+static const int OE_SLOT_SYMBOL_BAR    = 4;
+static const int OE_SLOT_SYMBOL_SEVEN  = 5;
+static const int OE_CASINO_RPC_SLOT_JACKPOT = 1766104;
+
+
+// Gambling Go Fish (player vs dealer AI).
+static const string OE_CASINO_GAME_GO_FISH = "go_fish";
+
+static const int OE_CASINO_RPC_GOFISH_SYNC  = 1766201;
+static const int OE_CASINO_RPC_GOFISH_START = 1766202;
+static const int OE_CASINO_RPC_GOFISH_ASK   = 1766203;
+static const int OE_CASINO_RPC_GOFISH_STATE = 1766204;
+
+static const int OE_GOFISH_STATUS_IDLE       = 0;
+static const int OE_GOFISH_STATUS_ACTIVE     = 1;
+static const int OE_GOFISH_STATUS_PLAYER_WIN = 2;
+static const int OE_GOFISH_STATUS_DEALER_WIN = 3;
+static const int OE_GOFISH_STATUS_PUSH       = 4;
+static const int OE_GOFISH_STATUS_ERROR      = 5;

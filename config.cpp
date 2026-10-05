@@ -25,7 +25,7 @@ class CfgMods
         dir = "OperationExileCasino";
         name = "Operation Exile Casino";
         author = "CtrlQuest / Operation Exile";
-        version = "0.14.6-chip-qol";
+        version = "0.16.3-station-template-catch-up-migration";
         type = "mod";
         dependencies[] = {"Game", "World", "Mission"};
 
@@ -81,6 +81,48 @@ class CfgSoundShaders
         range = 5;
         limitation = 0;
     };
+    class OECasino_SlotSpin_SoundShader
+    {
+        samples[] = {{"OperationExileCasino\sounds\slot_spin",1}};
+        volume = 0.90;
+        range = 5;
+        limitation = 0;
+    };
+    class OECasino_SlotReelStop_SoundShader
+    {
+        samples[] = {{"OperationExileCasino\sounds\slot_reel_stop",1}};
+        volume = 0.90;
+        range = 5;
+        limitation = 0;
+    };
+    class OECasino_SlotWin_SoundShader
+    {
+        samples[] = {{"OperationExileCasino\sounds\slot_win",1}};
+        volume = 0.90;
+        range = 5;
+        limitation = 0;
+    };
+    class OECasino_SlotLose_SoundShader
+    {
+        samples[] = {{"OperationExileCasino\sounds\slot_lose",1}};
+        volume = 0.90;
+        range = 5;
+        limitation = 0;
+    };
+    class OECasino_SlotJackpot_SoundShader
+    {
+        samples[] = {{"OperationExileCasino\sounds\slot_jackpot",1}};
+        volume = 0.95;
+        range = 5;
+        limitation = 0;
+    };
+    class OECasino_SlotPayout_SoundShader
+    {
+        samples[] = {{"OperationExileCasino\sounds\slot_payout",1}};
+        volume = 0.80;
+        range = 5;
+        limitation = 0;
+    };
 };
 
 class CfgSoundSets
@@ -116,6 +158,36 @@ class CfgSoundSets
         frequencyFactor = 1.0;
         spatial = 0;
         loop = 0;
+    };
+    class OECasino_SlotSpin_SoundSet
+    {
+        soundShaders[] = {"OECasino_SlotSpin_SoundShader"};
+        volumeFactor = 1.0; frequencyFactor = 1.0; spatial = 0; loop = 0;
+    };
+    class OECasino_SlotReelStop_SoundSet
+    {
+        soundShaders[] = {"OECasino_SlotReelStop_SoundShader"};
+        volumeFactor = 1.0; frequencyFactor = 1.0; spatial = 0; loop = 0;
+    };
+    class OECasino_SlotWin_SoundSet
+    {
+        soundShaders[] = {"OECasino_SlotWin_SoundShader"};
+        volumeFactor = 1.0; frequencyFactor = 1.0; spatial = 0; loop = 0;
+    };
+    class OECasino_SlotLose_SoundSet
+    {
+        soundShaders[] = {"OECasino_SlotLose_SoundShader"};
+        volumeFactor = 1.0; frequencyFactor = 1.0; spatial = 0; loop = 0;
+    };
+    class OECasino_SlotJackpot_SoundSet
+    {
+        soundShaders[] = {"OECasino_SlotJackpot_SoundShader"};
+        volumeFactor = 1.0; frequencyFactor = 1.0; spatial = 0; loop = 0;
+    };
+    class OECasino_SlotPayout_SoundSet
+    {
+        soundShaders[] = {"OECasino_SlotPayout_SoundShader"};
+        volumeFactor = 1.0; frequencyFactor = 1.0; spatial = 0; loop = 0;
     };
 };
 
